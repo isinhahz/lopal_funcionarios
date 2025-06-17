@@ -15,7 +15,7 @@ import br.dev.celso.tarefas_ds1ta.ui.FuncionariosListaFrame;
 
 public class Main {
 	
-	static String caminho = "/Users/25132976/tarefasDS1TA/tarefas";
+	static String caminho = "C:\\Users\\25132976\\tarefasDS1TA\\tarefas.csv";
 	
 	public static void main(String[] args) {
 		
