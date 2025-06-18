@@ -1,11 +1,22 @@
 package br.dev.celso.tarefas_ds1ta.ui;
 
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import br.dev.celso.tarefas_ds1ta.model.Tarefa;
 
 public class CadastroTarefas {
 	
 	public CadastroTarefas(JFrame tela) {
 		
+		criarTela(tela);
 	}
 
 	private void criarTela(JFrame parent) { 
@@ -26,33 +37,59 @@ public class CadastroTarefas {
 
 		 
 
-		JLabel labelNome = new JLabel("Nome:"); 
+		JLabel labelTitulo = new JLabel("Titulo:"); 
 
-		labelNome.setBounds(10, 10, 150, 30); 
+		labelTitulo.setBounds(10, 10, 150, 30); 
 
-		JTextField txtNome = new JTextField(); 
+		JTextField txtTitulo = new JTextField(); 
 
-		txtNome.setBounds(10, 40, 200, 30); 
-
-		 
-
-		JLabel labelCargo = new JLabel("Cargo:"); 
-
-		labelCargo.setBounds(10, 75, 150, 30); 
-
-		JTextField txtCargo = new JTextField(); 
-
-		txtCargo.setBounds(10, 105, 150, 30); 
+		txtTitulo.setBounds(10, 40, 200, 30); 
 
 		 
 
-		JLabel labelSetor = new JLabel("Setor:"); 
+		JLabel labelDescricao = new JLabel("Descrição:"); 
 
-		labelSetor.setBounds(10, 140, 150, 30); 
+		labelDescricao.setBounds(10, 75, 150, 30); 
 
-		JTextField txtSetor = new JTextField(); 
+		JTextField txtDescricao = new JTextField(); 
 
-		txtSetor.setBounds(10, 170, 200, 30); 
+		txtDescricao.setBounds(10, 105, 150, 30); 
+
+		 
+
+		JLabel labelDataInicial = new JLabel("Data Inicial:"); 
+
+		labelDataInicial.setBounds(10, 140, 150, 30); 
+
+		JTextField txtDataInicial = new JTextField(); 
+
+		txtDataInicial.setBounds(10, 170, 200, 30); 
+		
+		
+		JLabel labelPrazo = new JLabel("Prazo:"); 
+
+		labelPrazo.setBounds(10, 140, 150, 30); 
+
+		JTextField txtPrazo = new JTextField(); 
+
+		txtPrazo.setBounds(10, 170, 200, 30);
+		
+		
+		JLabel labelDataConclusao = new JLabel("Data conclusão:");
+		labelDataConclusao.setBounds(10, 140, 150, 30); 
+
+		JTextField txtDataConclusao = new JTextField(); 
+
+		txtDataConclusao.setBounds(10, 170, 200, 30);
+		
+		
+		JLabel labelStatus = new JLabel("Status:"); 
+
+		labelStatus.setBounds(10, 140, 150, 30); 
+
+		JTextField txtStatus = new JTextField(); 
+
+		txtStatus.setBounds(10, 170, 200, 30);
 
 		 
 
@@ -70,17 +107,29 @@ public class CadastroTarefas {
 
 		Container painel = tela.getContentPane(); 
 
-		painel.add(labelNome); 
+		painel.add(labelTitulo); 
 
-		painel.add(txtNome); 
+		painel.add(txtTitulo); 
 
-		painel.add(labelCargo); 
+		painel.add(labelDescricao); 
 
-		painel.add(txtCargo); 
+		painel.add(txtDescricao); 
 
-		painel.add(labelSetor); 
+		painel.add(labelDataInicial); 
 
-		painel.add(txtSetor); 
+		painel.add(txtDataInicial); 
+		
+		painel.add(labelPrazo);
+		
+		painel.add(txtPrazo);
+		
+		painel.add(labelDataConclusao); 
+
+		painel.add(txtDataConclusao);
+		
+		painel.add(labelStatus); 
+
+		painel.add(txtStatus);
 
 		painel.add(btnSalvar); 
 
@@ -88,79 +137,13 @@ public class CadastroTarefas {
 
 		 
 
-		btnSalvar.addActionListener(new ActionListener() { 
-
-			 
-
-			@Override 
-
-			public void actionPerformed(ActionEvent e) { 
-
-				 
-
-				Funcionario f = new Funcionario(); 
-
-				f.setNome(txtNome.getText()); 
-
-				f.setCargo(txtCargo.getText()); 
-
-				f.setSetor(txtSetor.getText()); 
-
-				 
-
-				FuncionarioDAO dao = new FuncionarioDAO(f); 
-
-				dao.salvar(); 
-
-				 
-
-				JOptionPane.showMessageDialog(tela, f.getNome() + " gravado com sucesso!"); 
-
-				 
-
-				txtNome.setText(null); 
-
-				txtCargo.setText(null); 
-
-				txtSetor.setText(null); 
-
-				txtNome.requestFocus(); 
-
-			} 
-
-		}); 
-
-		 
-
-		btnSair.addActionListener(new ActionListener() { 
-
-			 
-
-			@Override 
-
-			public void actionPerformed(ActionEvent e) { 
-
-				int resposta = JOptionPane.showConfirmDialog(tela, "Sair do sistema?"); 
-
-				if (resposta == 0) { 
-
-					tela.dispose(); 
-
-				} 
-
-			} 
-
-		}); 
-
-		 
-
-		tela.setVisible(true); 
-
-		 
-
-	} 
-
- 
-
-} 
-}
+	btnSalvar.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			Tarefa t = new Tarefa();
+			t.set
+			
+		}
+	});

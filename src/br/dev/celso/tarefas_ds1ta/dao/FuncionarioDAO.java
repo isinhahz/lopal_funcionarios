@@ -19,7 +19,7 @@ public class FuncionarioDAO {
 	private FileReader fr;
 	private BufferedReader br;
 	
-	private String arquivo = "C:\\Users\\25132976\\tarefasDS1TA\\funcionarios.csv";
+	private String arquivo = "C:\\Users\\isaes\\OneDrive\\Desktop\\tarefasDS1TA\\funcionarios.csv";
 	
 	public FuncionarioDAO(Funcionario funcionario) {
 		this.funcionario = funcionario;
