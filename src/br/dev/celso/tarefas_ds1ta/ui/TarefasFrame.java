@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -29,21 +30,21 @@ public class TarefasFrame {
 
 	 
 
-	private String[] colunas = {"Código", "Nome", "Resposável"}; 
+	private String[] colunas = {"Código", "Nome", "Responsável"}; 
 
 	 
 
-	public TarefasFrame() {
-		
+	public TarefasFrame(JFrame tela) {
+		criarTela();
 
 
 	} 
 	
-	private void criarTela() { 
+	private void criarTela(JFrame parent) { 
 
 		 
 
-		JFrame tela = new JFrame("Lista de funcionários"); 
+		JDialog tela = new JDialog(parent, true); 
 
 		tela.setSize(600, 500); 
 
@@ -61,7 +62,7 @@ public class TarefasFrame {
 
 		 
 
-		labelTitulo = new JLabel("Cadastro de Funcionários"); 
+		labelTitulo = new JLabel("Lista de Tarefas"); 
 
 		labelTitulo.setFont(new Font("arial", Font.BOLD, 28)); 
 
@@ -75,7 +76,7 @@ public class TarefasFrame {
 
 		carregarDados(); 
 
-		tabelaTarefas = new JTable(modelFuncionarios); 
+		tabelaTarefas = new JTable(model); 
 
 		scroll = new JScrollPane(tabelaTarefas); 
 

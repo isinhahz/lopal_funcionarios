@@ -3,21 +3,31 @@ package br.dev.celso.tarefas_ds1ta.ui;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.ObjectInputFilter.Status;
+import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 
+import br.dev.celso.tarefas_ds1ta.model.Funcionario;
 import br.dev.celso.tarefas_ds1ta.model.Tarefa;
 
 public class CadastroTarefas {
 	
+	private JComboBox<Status> jboxStatus;
+	private JComboBox<Funcionario> comboFuncionario;
+	
+	
 	public CadastroTarefas(JFrame tela) {
-		
 		criarTela(tela);
+
 	}
+	
 
 	private void criarTela(JFrame parent) { 
 
@@ -25,7 +35,7 @@ public class CadastroTarefas {
 
 		JDialog tela = new JDialog(parent, true); 
 
-		tela.setSize(400, 400); 
+		tela.setSize(400, 600); 
 
 		tela.setTitle("Cadastro de tarefas"); 
 
@@ -37,13 +47,13 @@ public class CadastroTarefas {
 
 		 
 
-		JLabel labelTitulo = new JLabel("Titulo:"); 
+		JLabel labelNome = new JLabel("Titulo:"); 
 
-		labelTitulo.setBounds(10, 10, 150, 30); 
+		labelNome.setBounds(10, 10, 150, 30); 
 
-		JTextField txtTitulo = new JTextField(); 
+		JTextField txtTarefa = new JTextField(); 
 
-		txtTitulo.setBounds(10, 40, 200, 30); 
+		txtTarefa.setBounds(10, 40, 200, 30); 
 
 		 
 
@@ -61,9 +71,9 @@ public class CadastroTarefas {
 
 		labelDataInicial.setBounds(10, 140, 150, 30); 
 
-		JTextField txtDataInicial = new JTextField(); 
+		
 
-		txtDataInicial.setBounds(10, 170, 200, 30); 
+		.setBounds(10, 170, 200, 30); 
 		
 		
 		JLabel labelPrazo = new JLabel("Prazo:"); 
@@ -87,9 +97,13 @@ public class CadastroTarefas {
 
 		labelStatus.setBounds(10, 140, 150, 30); 
 
-		JTextField txtStatus = new JTextField(); 
+		jboxStatus = new JComboBox<>(Status.values());
 
-		txtStatus.setBounds(10, 170, 200, 30);
+		.setBounds(10, 170, 200, 30);
+		
+		
+		JLabel labelResponsavel = new JLabel("Responsável:");
+		
 
 		 
 
@@ -107,9 +121,9 @@ public class CadastroTarefas {
 
 		Container painel = tela.getContentPane(); 
 
-		painel.add(labelTitulo); 
+		painel.add(labelNome); 
 
-		painel.add(txtTitulo); 
+		painel.add(txtTarefa); 
 
 		painel.add(labelDescricao); 
 
@@ -129,7 +143,9 @@ public class CadastroTarefas {
 		
 		painel.add(labelStatus); 
 
-		painel.add(txtStatus);
+		painel.add(jboxStatus);
+		
+		painel.add(labelResponsavel);
 
 		painel.add(btnSalvar); 
 
@@ -143,7 +159,10 @@ public class CadastroTarefas {
 		public void actionPerformed(ActionEvent e) {
 			
 			Tarefa t = new Tarefa();
-			t.set
-			
+			t.setNome(txtTarefa.getText());
+			t.setDescricao(txtDescricao.getText());
+			t.setDataInicio();
 		}
 	});
+	
+	
